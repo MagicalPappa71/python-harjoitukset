@@ -3,38 +3,39 @@
 print("Vaellat metsässä iltapäivällä, tuot repun eteesi.")
 print("Kaivat repusta jotain esinettä.")
 
-#lista esineistä
-pakkaus = []
+# Lista esineistä
+reppu = []
 
-def esineiden_lisäys(esineet):
-    esine = input("Anna esine: ")
+# Ensimmäinen funktio, kysyy käyttäjältä esineen ja lisää listaan.
+def inventaario(esineet):
+    esine = input("Anna esine: ") 
     esineet.append(esine)
+    print(f"Kaivoit repusta: {esine}")
 
-print("Kaivoit repustasi")
-esineiden_lisäys(esineet)
+# Toinen funkito tulostaa listan sisällön.
 
-# Ensimmäinen funktio, kysyy käyttäjältä esineitä.
 def omistamat_esineet(esineet):
     print("Sinulla on: ")
-    for jokainen_esine in esineet:
-        print(jokainen_esine)
+    for esine in esineet:
+        print(esine)
 
-# Tässä koodissa kysytään esineitä, jotka menevät "pakkaus" listaan. 
-omistamat_esineet(pakkaus)
+# Näin ohjelma tulostaa repusta kaivetun esineen. 
+inventaario(reppu)
+omistamat_esineet(reppu)
 
-
-
-def tikku(kerrat):
+# Kolmas funktio voi itse päättää mitä voit luoda.
+def sieni(kerrat):
     for i in range(kerrat):
         print("YUAAH!" + str(i+1))
     return
 
-print("Oh boy, tuolla on tikku!")
-kysymys = input("Poimitaanko sitä, vai ei poimita?: ")
-if kysymys == "poimitaan":
-    print("Alright, poimitaan")
-    tikku(4)
-
+print("Oh boy, tuolla on sieni!")
+kysymys = input("Tökitäänkö tuota sieniä meidän esineellä, kyllä vai ei?: ")
+if kysymys == "kyllä":
+    print("Alright, tökitään")
+    sieni(4)
+    print("Ohoh, sehän on elävä sieni smurffi!")
+    print('Älä töki toista!' " - sieni smurffi")
 else:
     print("Hpft, nah!")
 
